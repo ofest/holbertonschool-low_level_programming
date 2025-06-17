@@ -10,16 +10,12 @@
 
 int main(void)
 {
-	int n;
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-        putchar
+	char i;
 
+	for (i = 97 ; i <= 122 ; i++)
+	putchar(i);
 
+	putchar ('\n');
 
-
-
-
-
-return (0);
+	return (0);
 }
