@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "main.c"
+#include "main.h"
 /**
 *main - Entry point
 *Description : Prints _putchar whit a space.
