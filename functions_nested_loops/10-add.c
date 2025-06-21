@@ -5,7 +5,7 @@
  * add - adds two numbers together.
  * @a: number 1
  * @b: number 2
- * Returns: sum of the two numbers.
+ * Return: the sum of a and b.
 */
 int add(int a, int b)
 {
