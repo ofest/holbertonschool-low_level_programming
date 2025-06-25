@@ -14,9 +14,10 @@ void rev_string(char *s)
 	while (s[point2++])
 		point1++;
 
-	for (point2 = point1 - 1; point2 >= point1 / 2; point2--) 
+	for (point2 = point1 - 1; point2 >= point1 / 2; point2--)
 	{
 		char tmp = s[point2];
+
 		s[point2] = s[point1 - point2 - 1];
 		s[point1 - point2 - 1] = tmp;
 	}
