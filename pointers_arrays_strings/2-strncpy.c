@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 /**
- * _strncat - Function that link two strings.
+ * _strncpy - Function that link two strings.
  * @dest: String one.
  * @src: String two.
- * @index: index.
+ * @n: number.
  * Return: Return to start, dest.
  */
 
