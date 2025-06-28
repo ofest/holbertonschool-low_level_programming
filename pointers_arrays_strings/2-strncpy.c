@@ -5,24 +5,22 @@
  * _strncat - Function that link two strings.
  * @dest: String one.
  * @src: String two.
- * @n: Number.
+ * @index: index.
  * Return: Return to start, dest.
  */
 
-char *_strncat(char *dest, char *src, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
-	char *start = dest;
-	int i;
+	int index = 0, src_len = 0;
 
-	while (*dest != '\0')
-	{
-		dest++;
-	}
-	for (i = 0; i < n && src[i] != '\0'; i++)
-	{
-		*dest = src[i];
-		dest++;
-	}
-	*dest = '\0';
-	return (start);
+	while (src[index++])
+		src_len++;
+
+	for (index = 0; src[index] && index < n; index++)
+		dest[index] = src[index];
+
+	for (index = src_len; index < n; index++)
+		dest[index] = '\0';
+
+	return (dest);
 }
