@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * cap_string - Function that change the lowercases to uppercases.
+ * cap_string - Function that capitalizes all words of a string.
  * @a: string
  * Return: Return to a string with the news values.
  */
