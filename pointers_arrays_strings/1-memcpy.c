@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 /**
- * _memset - Add a function that fills memory with constant byte.
- * @s: Destination.
- * @b: Constant.
+ * _memcpy - Add a function that copy the memory to another memory location.
+ * @dest: Destination.
+ * @src: source.
  * @n: Bytes.
  * Return: s.
  */
