@@ -2,10 +2,9 @@
 #include <stdio.h>
 
 /**
- *_sqrt_recursion - Look if the number is negative or 0.
- *sqrt_helper - Search for the raised number.
- *@n: raised number.
- *@g: guess number.
+ * sqrt_helper - Search for the raised number.
+ * @n: raised number.
+ * @g: guess number.
  * Return: Return -1, 0 if is good return to sqrt_helper searching the result.
  */
 
@@ -22,6 +21,14 @@ int sqrt_helper(int n, int g)
 	}
 	return (sqrt_helper(n, g + 1));
 }
+
+/**
+ * _sqrt_recursion - returns the natural square root of a number
+ *
+ * @n: the number to return the square root of
+ *
+ * Return: the square root of @n
+ */
 
 int _sqrt_recursion(int n)
 
