@@ -4,7 +4,7 @@
 /**
  * prime_helper - Look if the number is negative or 0.
  * @n: raised number.
- * @divisor:
+ * @divisor: Divide number.
  * Return: Return 0.
  */
 
@@ -20,12 +20,8 @@ int prime_helper(int n, int divisor)
 	}
 	return (prime_helper(n, divisor + 1));
 }
-
-
-	
-	
 /**
- * _prime_number - Look if the number is negative or 0.
+ * is_prime_number - Look if the number is negative or 0.
  * @n: raised number.
  * Return: Return 0.
  */
