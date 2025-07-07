@@ -3,21 +3,22 @@
 #include <stdlib.h>
 
 /**
- * main - check the code
+ * _strdup - Function that returns a pointer to a new allocated space in memory
+ * @str: String.
+ * Return: NULL or arra
  *
- * Return: Always 0.
  */
 
 char *_strdup(char *str)
 {
- 	unsigned int n = 0;
+	unsigned int n = 0;
 	char *array;
 	unsigned int i;
 
 	if (str == NULL)
-        {
-                return(NULL);
-        }
+	{
+		return (NULL);
+	}
 
 	while (str[n] != '\0')
 	{
@@ -28,7 +29,7 @@ char *_strdup(char *str)
 
 	if (array == NULL)
 	{
-	return(NULL);
+	return (NULL);
 	}
 
 	for (i = 0; i < n; i++)
@@ -37,6 +38,6 @@ char *_strdup(char *str)
 	}
 	array[n] = '\0';
 
-	return(array);	
+	return (array);
 
 }
