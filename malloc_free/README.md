@@ -3,3 +3,10 @@
 2. He who is not courageous enough to take risks will accomplish nothing in life
 3. If you even dream of beating me you'd better wake up and apologize
 4. It's not bragging if you can back it up
+
+More
+
+0. Trust no one
+1. string_nconcat
+2. _calloc
+3. array_range
