@@ -1,7 +1,8 @@
-#include <stdio.h>
 #include "dog.h"
 #include <stdlib.h>
-#include <string.h>
+
+int _strlen(char *s);
+char *_strcpy(char *dest, char *src);
 /**
  * new_dog - Creates a new dog.
  * @name: pointer to name of dog
@@ -11,38 +12,71 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-dog_t *new_dog;
+dog_t *doggy;
+int nam = 0, own = 0;
 
-new_dog = malloc(sizeof(dog_t));
-if (new_dog == NULL)
+if (name != NULL && owner != NULL)
 {
+nam = _strlen(name) + 1;
+own = _strlen(owner) + 1;
+doggy = malloc(sizeof(dog_t));
+
+if (doggy == NULL)
+return (NULL);
+
+doggy->name = malloc(sizeof(char) * nam);
+if (doggy->name == NULL)
+{
+free(doggy);
 return (NULL);
 }
 
-if (name != NULL)
+doggy->owner = malloc(sizeof(char) * own);
+if (doggy->owner == NULL)
 {
-new_dog->name = malloc(strlen(name) + 1);
-if (new_dog->name == NULL)
-{
-free(new_dog);
+free(doggy->name);
+free(doggy);
 return (NULL);
 }
-strcpy(new_dog->name, name);
+
+doggy->name = _strcpy(doggy->name, name);
+doggy->owner = _strcpy(doggy->owner, owner);
+doggy->age = age;
+}
+return (doggy);
+}
+/**
+ * _strlen - copy string
+ * @s: string.
+ * Return: dest
+ */
+
+int _strlen(char *s)
+{
+int c = 0;
+
+for (; *s != '\0'; s++)
+{
+c++;
+}
+return (c);
+}
+/**
+ * _strcpy - copy string
+ * @dest: destination
+ * @src: source
+ * Return: dest
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+int i;
+
+for (i = 0; src[i] != '\0'; i++)
+{
+dest[i] = src[i];
+}
+dest[i++] = '\0';
+return (dest);
 }
 
-if (owner != NULL)
-{
-new_dog->owner = malloc(strlen(owner) + 1);
-if (new_dog->owner == NULL)
-{
-free(new_dog->name);
-free(new_dog);
-return (NULL);
-}
-strcpy(new_dog->owner, owner);
-}
-
-if (age >= 0)
-new_dog->age = age;
-return (new_dog);
-}
