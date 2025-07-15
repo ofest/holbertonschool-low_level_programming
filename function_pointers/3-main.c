@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "3-calc.h"
 #include <string.h>
+#include <stdlib.h>
 
 /**
  * main - code.
@@ -11,21 +12,17 @@
  */
 
 int main(int argc, char *argv[])
-{
-int num1;
-int num2;
+{	
+int num1 = 0;
+int num2 = 0;
 
 if (argc != 4)
 	{
-	printf("Try again\n");
+	printf("Error\n");
 	return (1);
 	}
+
 if (!strchr("+-*/%", argv[2][0]))
-	{
-	printf("ERROR\n");
-	return (1);
-	}
-if (strlen(argv[2]) != 1)
 	{
 	printf("ERROR\n");
 	return (1);
@@ -34,5 +31,43 @@ if (strlen(argv[2]) != 1)
 num1 = atoi(argv[1]);
 num2 = atoi(argv[3]);
 
+
+if (strcmp(argv[2], "+") == 0) 
+{
+printf("%d\n", num1 + num2);
+} 
+
+else if (strcmp(argv[2], "-") == 0) 
+{
+printf("%d\n", num1 - num2);
+}
+else if (strcmp(argv[2], "*") == 0) 
+{
+printf("%d\n", num1 * num2);
+}
+else if (strcmp(argv[2], "/") == 0) 
+	{
+	if (num2 == 0) 
+		{
+		printf("ERROR: Division by zero\n");
+        return (1);
+		}
+	printf("%d\n", num1 / num2);
+	}
+else if (strcmp(argv[2], "%") == 0) 
+	{
+	if (num2 == 0) 
+		{
+       	printf("ERROR: Division by zero\n");
+        return (1);
+    	}
+	printf("%d\n", num1 % num2);
+	}
+
+if (strlen(argv[2]) != 1)
+	{
+	printf("ERROR\n");
+	return (1);
+	}
 return (0);
 }
