@@ -3,6 +3,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+int (*get_op_func(char *s))(int, int);
+
 /**
  * main - code.
  *
@@ -12,62 +14,33 @@
  */
 
 int main(int argc, char *argv[])
-{	
-int num1 = 0;
-int num2 = 0;
-
-if (argc != 4)
-	{
-	printf("Error\n");
-	return (1);
-	}
-
-if (!strchr("+-*/%", argv[2][0]))
-	{
-	printf("ERROR\n");
-	return (1);
-	}
-
-num1 = atoi(argv[1]);
-num2 = atoi(argv[3]);
-
-
-if (strcmp(argv[2], "+") == 0) 
 {
-printf("%d\n", num1 + num2);
-} 
+	int a, b;
+	char c;
 
-else if (strcmp(argv[2], "-") == 0) 
-{
-printf("%d\n", num1 - num2);
-}
-else if (strcmp(argv[2], "*") == 0) 
-{
-printf("%d\n", num1 * num2);
-}
-else if (strcmp(argv[2], "/") == 0) 
+	if (argc != 4)
 	{
-	if (num2 == 0) 
-		{
-		printf("ERROR: Division by zero\n");
-        return (1);
-		}
-	printf("%d\n", num1 / num2);
-	}
-else if (strcmp(argv[2], "%") == 0) 
-	{
-	if (num2 == 0) 
-		{
-       	printf("ERROR: Division by zero\n");
-        return (1);
-    	}
-	printf("%d\n", num1 % num2);
+		printf("Error\n");
+		exit(98);
 	}
 
-if (strlen(argv[2]) != 1)
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+	c = *argv[2];
+
+	if (argv[2][1] != '\0' || *get_op_func(argv[2]) == NULL)
 	{
-	printf("ERROR\n");
-	return (1);
+		printf("Error\n");
+		exit(99);
 	}
-return (0);
+
+	if ((c == '/' || c == '%') && b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+
+	printf("%d\n", (*get_op_func(argv[2]))(a, b));
+
+	return (0);
 }
