@@ -24,5 +24,5 @@ while (ops[i].op != NULL)
 	i++;
 }
 
-return (NULL);
+return (ops[i].f);
 }
