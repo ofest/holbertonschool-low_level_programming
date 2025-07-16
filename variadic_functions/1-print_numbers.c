@@ -17,11 +17,6 @@ va_list list;
 
 va_start(list, n);
 
-if (separator == NULL)
-	{
-	return;
-	}
-
 for (i = 0; i < n; i++)
 	{
 	if (i > 0)
