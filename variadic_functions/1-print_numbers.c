@@ -17,9 +17,15 @@ va_list list;
 
 va_start(list, n);
 
+if (n == 0)
+	{
+    printf("\n");
+    return;
+	}
+	
 for (i = 0; i < n; i++)
 	{
-	if (i > 0)
+	if (i > 0 && separator != NULL)
 		{
 		printf("%s", separator);
 		}
