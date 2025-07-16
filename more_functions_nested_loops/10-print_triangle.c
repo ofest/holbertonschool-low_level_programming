@@ -1,7 +1,7 @@
 #include "main.h"
 /**
 * print_triangle - Entry point of the program
-* @size: he height of the triangle to be printed.
+* @size: The height of the triangle to be printed.
 * Description: This function prints a triangle of hashtags (#)
 * If the size is less than or equal to zero, it prints a new line.
 */

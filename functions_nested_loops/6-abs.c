@@ -4,8 +4,8 @@
 /**
  *  _abs - Calcute the absolute valor of a value.
  *  Description : Absolute value of the integer.
- *  @n : Valor
- *  Return: To 0
+ *  @n : Valor.
+ *  Return: Return the absolute value of n.
  */
 
 int _abs(int n)

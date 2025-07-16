@@ -5,6 +5,8 @@
 /**
  * _strdup - Function that returns a pointer to a new allocated space in memory
  * @str: String.
+ * @array: Copy of the memory.
+ * @n: length.
  * Return: NULL or arra
  *
  */

@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * print_most_numbers - Print the numbers, one to nine.
+ * print_most_numbers- Print the numbers, one to nine.
  */
 
 void print_most_numbers(void)
