@@ -19,20 +19,23 @@ va_start(list, n);
 
 for (i = 0; i < n; i++)
 	{
+
 	if (i > 0 && separator != NULL)
 		{
 		printf("%s", separator);
 		}
-
+	result = va_arg(list, const char *);
+	
 	if (result == NULL)
 		{
-		printf("%s(nil)", result);
+		printf("(nil)");
 		}
-
-	result = va_arg(list, const char *);
-	printf("%s", result);
+	else
+   		{
+    	printf("%s", result);
+		}
 	}
-
+	
 printf("\n");
 va_end(list);
 }
