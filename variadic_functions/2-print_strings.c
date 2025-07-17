@@ -32,7 +32,7 @@ for (i = 0; i < n; i++)
 	result = va_arg(list, const char *);
 	printf("%s", result);
 	}
-	
+
 printf("\n");
 va_end(list);
 }
