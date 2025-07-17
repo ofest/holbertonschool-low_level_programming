@@ -3,7 +3,7 @@
 #include <stdarg.h>
 
 /**
-* print_numbers - Print numbers.
+* print_strings - Print stringsgit pr.
 * @separator: text between the numbers','.
 * @n: Numbers.
 * Return: void.
@@ -24,14 +24,15 @@ for (i = 0; i < n; i++)
 		printf("%s", separator);
 		}
 
-	result = va_arg(list, const char *);
-	printf("%s", result);
 	if (result == NULL)
 		{
 		printf("%s(nil)", result);
 		}
-	}
-printf("\n");
 
+	result = va_arg(list, const char *);
+	printf("%s", result);
+	}
+	
+printf("\n");
 va_end(list);
 }
