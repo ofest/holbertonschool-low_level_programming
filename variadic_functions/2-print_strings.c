@@ -25,17 +25,16 @@ for (i = 0; i < n; i++)
 		printf("%s", separator);
 		}
 	result = va_arg(list, const char *);
-	
+
 	if (result == NULL)
 		{
 		printf("(nil)");
 		}
 	else
-   		{
-    	printf("%s", result);
+		{
+		printf("%s", result);
 		}
 	}
-	
 printf("\n");
 va_end(list);
 }
