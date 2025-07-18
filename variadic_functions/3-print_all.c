@@ -24,7 +24,7 @@ void (*ptr[])(va_list) = {print_c, print_i, print_f, print_s};
 char *separator = "";
 
 va_start(list, format);
-while (format[index] != '\0' && format != NULL)
+while (format != NULL && format[index] != '\0')
 	{
 	j = 0;
 	while (table[j] != '\0')
