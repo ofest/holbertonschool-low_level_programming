@@ -40,9 +40,12 @@ if (bytes_read == -1)
 bytes_written = write(STDOUT_FILENO, buff, bytes_read);
 if (bytes_written == -1 || bytes_written != bytes_read)
 	{
+	free(buff);
 	close(fd);
 	return (0);
 	}
+free(buff);
+close(fd);
 return (bytes_read);
 
 }
