@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * create_file - function that appends text at the end of a file.
+ * create_file - function that creates a file.
  * @filename: name of the file.
  * @text_content: content of the text.
  * Return: 1 if success -1 if fail.
